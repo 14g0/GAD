@@ -4,52 +4,18 @@ import { readline } from './execute.js';
 
 const terminal = promisify(exec);
 
-const trainees = [
-    ['Iago Cesar', 'iagoC'],
-    ['Alex Aguiar Lana', 'alexA'],
-    ['Antônio Pedro Corrêa Rodrigues', 'antonioC'],
-    ['Bruna Nobrega', 'brunaN'],
-    ['Bruna Melloni', 'brunaM'],
-    ['Cauã Parangaba Pinto', 'cauaP'],
-    ['Davi Alves', 'daviA'],
-    ['David Cubric Russo', 'davidC'],
-    ['Diego Samim Da Silva', 'diegoS'],
-    ['Emilly Tavares', 'emilyT'],
-    ['Esther Mussi de Castro', 'estherM'],
-    ['Fernanda Bussi', 'fernandaB'],
-    ['Gabriel de Araujo de Souza', 'gabrielS'],
-    ['Gabriel Ayres Fortunato', 'gabrielF'],
-    ['Guilherme Lemos Oliveira', 'guilhermeL'],
-    ['Gustavo Teixeira Breda', 'gustavoT'],
-    ['João Moraes', 'joaoM'],
-    ['Jorge Henrique Santiago Moreira Júnior', 'jorgeH'],
-    ['Leonardo de Barros Fernandes', 'leonardoB'],
-    ['Luiz Ricardo Nogueira Dias', 'luizR'],
-    ['Miguel Ângelo De Souza Vieira', 'miguelA'],
-    ['Pedro Rizzo Soares Pinto', 'pedroR'],
-    ['Pedro Favato', 'pedroF'],
-    ['Rafael El Shafie Ribeiro Pinto', 'rafaelE'],
-    ['Sòcrates de Sousa', 'socratesS'],
-    ['Thiago Simões Blandi Correa', 'thiagoS'],
-]
+const nomeUsuario = process.env.USER_NAME;
+const nomeBranch = process.env.BRANCH_NOME;
+const nomeRepo = process.env.REPO_NOME;
 
-export async function printTraineeBranch() {
-    console.clear();
-    console.table(trainees.map((trainee) => trainee[0]));
-    
-    const resposta = await readline.question('\x1b[33mInsira o número do seu nome\x1b[m\n> ');
-    console.log(`O nome da sua branch é \x1b[33;1m[${trainees[resposta][1]}]\x1b[m`);
-
-    return await readline.question('\n\x1b[33m[Aperte qualquer tecla para voltar ao menu principal]\x1b[m');
-}
 
 export async function checarBranch() {
     console.clear();
-    const nomeUsuario = await readline.question('Insira o seu nome de usuário no GitHub\n> ');
-    const nomeBranch = await readline.question('\nInsira o nome da Branch\n> ');
+    // const nomeUsuario = await readline.question('Insira o seu nome de usuário no GitHub\n> ');
+    // const nomeBranch = await readline.question('\nInsira o nome da Branch\n> ');
     console.log('\n\x1b[33;1m[Checando...]\x1b[m\n');
 
-    const comando = `git ls-remote --heads git@github.com:${nomeUsuario}/GAD.git ${nomeBranch}`
+    const comando = `git ls-remote --heads git@github.com:${nomeUsuario}/${nomeRepo}.git ${nomeBranch}`
     const retorno = await terminal(comando);
     const branchNome = retorno.stdout.trim().split('/')[2];
 

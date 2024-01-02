@@ -1,4 +1,4 @@
-import { checarBranch, printTraineeBranch, checkIagoRepo } from './gitBranch.js';
+import { checarBranch, checkIagoRepo } from './gitBranch.js';
 import { createInterface } from "node:readline/promises";
 
 export const readline = createInterface({
@@ -10,9 +10,8 @@ async function main() {
     while(true) {
         console.clear();
         const resposta = await readline.question(`Insira sua opção:
-\x1b[34;1m[1] Ver o nome da sua branch.
-[2] Checar se você pushou sua branch.
-[3] Checar se seu PR foi aprovado.\x1b[33;1m
+\x1b[34;1m[1] Checar se você pushou sua branch.
+[2] Checar se seu PR foi aprovado.\x1b[33;1m
 [SAIR] para sair.\x1b[m\n> `);
 
         if(resposta.toUpperCase() == 'SAIR') break;
@@ -23,15 +22,15 @@ async function main() {
 \n\x1b[33m[Aperte qualquer tecla para voltar ao menu principal]\x1b[m`);
                     break;
 
-                case '1':
-                    await printTraineeBranch();
-                    break;
+                // case '1':
+                //     await printTraineeBranch();
+                //     break;
 
-                case '2':
+                case '1':
                     await checarBranch();
                     break;
 
-                case '3':
+                case '2':
                     await checkIagoRepo();
                     break;
             }
