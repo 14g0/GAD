@@ -11,8 +11,6 @@ const nomeRepo = process.env.REPO_NOME;
 
 export async function checarBranch() {
     console.clear();
-    // const nomeUsuario = await readline.question('Insira o seu nome de usuário no GitHub\n> ');
-    // const nomeBranch = await readline.question('\nInsira o nome da Branch\n> ');
     console.log('\n\x1b[33;1m[Checando...]\x1b[m\n');
 
     const comando = `git ls-remote --heads git@github.com:${nomeUsuario}/${nomeRepo}.git ${nomeBranch}`
@@ -34,7 +32,6 @@ Tente novamente ou fale com algum membro da EJCM.\x1b[m`);
 
 export async function checkIagoRepo() {
     console.clear();
-    const nomeBranch = await readline.question('Insira o nome da Branch\n> ');
 
     console.log('\n\x1b[33;1m[Checando...]\x1b[m\n');
     const retorno = await terminal(`git ls-remote --heads git@github.com:14g0/GAD.git ${nomeBranch}`);
