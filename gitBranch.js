@@ -31,7 +31,7 @@ const trainees = [
     ['Rafael El Shafie Ribeiro Pinto', 'rafaelE'],
     ['Sòcrates de Sousa', 'socratesS'],
     ['Thiago Simões Blandi Correa', 'thiagoS'],
-]
+];
 
 export async function printTraineeBranch() {
     console.clear();
