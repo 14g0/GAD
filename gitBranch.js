@@ -8,7 +8,6 @@ const trainees = [
     ['Iago Cesar', 'iagoC'],
     ['Alex Aguiar Lana', 'alexA'],
     ['Antônio Pedro Corrêa Rodrigues', 'antonioC'],
-    ['Bruna Nobrega', 'brunaN'],
     ['Bruna Melloni', 'brunaM'],
     ['Cauã Parangaba Pinto', 'cauaP'],
     ['Davi Alves', 'daviA'],
