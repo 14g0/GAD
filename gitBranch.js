@@ -26,9 +26,7 @@ const trainees = [
     ['Leonardo de Barros Fernandes', 'leonardoB'],
     ['Luiz Ricardo Nogueira Dias', 'luizR'],
     ['Miguel Ângelo De Souza Vieira', 'miguelA'],
-    ['Pedro Rizzo Soares Pinto', 'pedroR'],
     ['Pedro Favato', 'pedroF'],
-    ['Rafael El Shafie Ribeiro Pinto', 'rafaelE'],
     ['Sòcrates de Sousa', 'socratesS'],
     ['Thiago Simões Blandi Correa', 'thiagoS'],
 ]
